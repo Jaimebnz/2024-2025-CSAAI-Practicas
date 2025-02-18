@@ -1,65 +1,100 @@
 /* https://www.w3schools.com/howto/howto_css_two_columns.asp */
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
-/* Así definimos el comportamiento de caja para todos los elementos */
+
+/* Definimos el comportamiento de caja para todos los elementos */
 * {
-    box-sizing: border-box;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilo del título */
+h1 {
+  text-align: center;
+  background-color: #0073e6;
+  color: white;
+  padding: 20px;
+  margin: 0;
+}
+
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
-float: left;
-padding: 10px;
-min-height: 500px;
+  float: left;
+  padding: 20px;
+  min-height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .izquierda {
-width: 25%;
+  width: 25%;
 }
 
 .derecha {
-width: 75%;
+  width: 75%;
 }
 
-/* Clear floats despues de las columnas para eliminar la superposición */
-.filla:after {
-content: "";
-display: table;
-clear: both;
+/* Clear floats después de las columnas para eliminar la superposición */
+.fila:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
+/* Fondos para las secciones */
 #c1 {
-    background-color:#aaa;
+  background-color: #ddd;
 }
 
 #c2 {
-    background-color:#bbb;
+  background-color: #eee;
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
-
+/* Estilos para imágenes */
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
+/* Imágenes en la columna izquierda */
 .iresponsive {
-    padding: 0 6px;
-    float: left;
-    width: 50%;
-  }
-
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
-/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
-
-@media screen and (max-width: 600px) {
-    .columna {
-      width: 100%;
-    }
-
-    .iresponsive {
-        width: 100%;
-    }
+  padding: 10px 0;
+  text-align: center;
 }
 
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+/* Estilo de la lista de navegación */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+ul li {
+  padding: 10px;
+  background: #0073e6;
+  color: white;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+ul li:hover {
+  background: #005bb5;
+}
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, las columnas se apilan */
+@media screen and (max-width: 600px) {
+  .columna {
+      width: 100%;
+      float: none;
+  }
+}
