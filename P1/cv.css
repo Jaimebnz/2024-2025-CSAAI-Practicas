@@ -3,13 +3,13 @@
 }
 
 body {
-  background-image: url('https://i.pinimg.com/736x/5b/9d/2c/5b9d2c4a1716f01700cb2c35a7b7a457.jpg');
-  background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
-  background-position: center; /* Centra la imagen */
-  background-attachment: fixed; /* Fija la imagen para que no se desplace */
+  background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+/* Estilos para las columnas */
 .columna {
   float: left;
   padding: 10px;
@@ -24,7 +24,7 @@ body {
   width: 75%;
 }
 
-/* Clear floats después de las columnas para eliminar la superposición */
+/* Clear floats */
 .fila:after {
   content: "";
   display: table;
@@ -32,17 +32,26 @@ body {
 }
 
 #c1 {
-  background-color: rgba(170, 170, 170, 0.8); /* Fondo semi-transparente */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 #c2 {
-  background-color: rgba(187, 187, 187, 0.8); /* Fondo semi-transparente */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* Estilos para imágenes */
 img {
   width: 100%;
   height: auto;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
 }
 
 .iresponsive {
@@ -51,7 +60,7 @@ img {
   width: 50%;
 }
 
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Responsive design */
 @media screen and (max-width: 600px) {
   .columna {
       width: 100%;
