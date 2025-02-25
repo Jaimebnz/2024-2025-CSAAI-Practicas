@@ -1,51 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Dos columnas</title>
-
-   <!-- Hoja de estilo -->
-   <link rel="stylesheet" href="2c-template.css">    
-
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="hojaestiloCV.css">
+  <title>Currículum Mike Wazowski</title>
 </head>
+
 <body>
-    
-    <h2>Diseño de plantilla a dos columnas</h2>
-
-    <div class="fila">
-      <div id="c1" class="columna izquierda">
-        <h2>Columna Izquierda</h2>
-
-        <div class="iresponsive">
-            <img id="imghtml" src="html5.png" alt="html5" width="200" height="200">
-        </div>
-
-        <div class="iresponsive">
-            <img id="imgcss" src="css.png" alt="css" width="200" height="200">
-        </div>
-
-        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-            eirmod tritani debitis nec ea. Cu vis quis gubergren.
-        </p>
-        <ul>
-            <li>Contacto</li>
-            <li>Formación</li>
-            <li>Experiencia</li>
-            <li>Acerca de</li>
-        </ul>
-      </div>
-      <div id="c2" class="columna derecha">
-        <h2>Columna Derecha</h2>
-        <img src="web-tech.png" alt="Tecnologías web">
-        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-            eirmod tritani debitis nec ea. Cu vis quis gubergren.
-        </p>
-      </div>
+    <!--Encabezado-->
+    <h1>MIKE WAZOWSKI</h1>
+    <div class="gif">
+      <img src="mike.gif" width="120px">
     </div>
+    
+    <!--Division del cuerpo-->
+    <div class="cuerpo">
+      <!-- Caja lateral -->
+      <aside>
+        <div class="imagen">
+          <img src="mike.png" alt="Mike Wazowski" width="300px">
+        </div>
+        
+        <div class="apartados">
+          <h2>Sobre mí</h2>
+        </div>
+        <div class="parrafos">
+          <p>¡Hola! Soy Mike Wazowski, un monstruo carismático y talentoso.
+          Mi sueño siempre fue ser el mejor asustador en Monsters, Inc., pero
+          descubrí que mi verdadera habilidad estaba en la motivación y el trabajo en equipo.
+          Actualmente, me dedico a la gestión de energía en Monstruópolis.</p>
+        </div>
+        
+        <div class="apartados">
+          <h2>Contacto</h2>
+        </div>
+        <div class="parrafos">
+          <p><img src="telefono.png" alt="Teléfono" width=20px> +123 456 789 <br>
+          <img src="email.png" alt="Correo" width=20px> mike@monstersinc.com <br>
+          <img src="linkedin.png" alt="LinkedIn" width=20px>
+          <a href="#">MikeWazowski.LinkedIn</a></p>
+        </div>
+        
+        <div class="apartados">
+          <h2>Frases célebres</h2>
+        </div>
+        <div class="frases">
+          <ul>
+            <li>"¡Soy tu pesadilla más aterradora!"</li>
+            <li>"Nada es más importante que la risa de un niño."</li>
+            <li>"¡Vamos Sulley, es nuestro momento!"</li>
+          </ul>
+        </div>
+      </aside>
 
+      <!-- Caja principal -->
+      <main>
+        <div class="apartados">
+          <h2>Estudios</h2>
+        </div>
+        <div class="parrafos">
+          <ul>
+            <li>Licenciado en Asustología, Universidad Monsters.</li>
+            <li>Especialización en Risas y Energía Sustentable.</li>
+          </ul>
+        </div>
+        
+        <div class="apartados">
+          <h2>Experiencia profesional</h2>
+        </div>
+        <div class="parrafos">
+          <ul>
+            <li>Asustador en entrenamiento en Monsters, Inc.</li>
+            <li>Coach y motivador de asustadores.</li>
+            <li>Gestor de energía infantil en Monstruópolis.</li>
+          </ul>
+        </div>
+        
+        <div class="apartados">
+          <h2>Habilidades</h2>
+        </div>
+        <div class="parrafos">
+          <ul>
+            <li>Trabajo en equipo</li>
+            <li>Carisma y liderazgo</li>
+            <li>Gestión del miedo y la risa</li>
+          </ul>
+        </div>
+        
+        <div class="apartados">
+          <h2>Referencias</h2>
+        </div>
+        <address>
+          <p>James P. Sullivan<br>
+          Excompañero de trabajo en Monsters, Inc.<br>
+          Relación: Mejor amigo<br>
+          sulley@monstersinc.com</p>
+          
+          <p>Roz<br>
+          Supervisora en Monsters, Inc.<br>
+          Relación: Jefa<br>
+          roz@monstersinc.com</p>
+        </address>
+      </main>
+    </div>
+    
+    <!-- Pie de página -->
+    <footer>
+      <img src="monsters_logo.png" width="300px">
+      <img src="mike_dance.gif" width="90px">
+    </footer>
 </body>
 </html>
