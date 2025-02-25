@@ -1,69 +1,63 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
 body {
-    background-image: url('https://i.imgur.com/https://i.pinimg.com/736x/5b/9d/2c/5b9d2c4a1716f01700cb2c35a7b7a457.jpg.jpg');
-    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-attachment: fixed; /* Fija la imagen para que no se desplace */
-} 
+  background-image: url('https://i.pinimg.com/736x/5b/9d/2c/5b9d2c4a1716f01700cb2c35a7b7a457.jpg');
+  background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Fija la imagen para que no se desplace */
+}
 
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
-float: left;
-padding: 10px;
-min-height: 500px;
+  float: left;
+  padding: 10px;
+  min-height: 500px;
 }
 
 .izquierda {
-width: 25%;
+  width: 25%;
 }
 
 .derecha {
-width: 75%;
+  width: 75%;
 }
 
-/* Clear floats despues de las columnas para eliminar la superposición */
-.filla:after {
-content: "";
-display: table;
-clear: both;
+/* Clear floats después de las columnas para eliminar la superposición */
+.fila:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #c1 {
-    background-color:#aaa;
+  background-color: rgba(170, 170, 170, 0.8); /* Fondo semi-transparente */
 }
 
 #c2 {
-    background-color:#bbb;
+  background-color: rgba(187, 187, 187, 0.8); /* Fondo semi-transparente */
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
-
+/* Estilos para imágenes */
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .iresponsive {
-    padding: 0 6px;
-    float: left;
-    width: 50%;
-  }
-
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
-/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
-
-@media screen and (max-width: 600px) {
-    .columna {
-      width: 100%;
-    }
-
-    .iresponsive {
-        width: 100%;
-    }
+  padding: 0 6px;
+  float: left;
+  width: 50%;
 }
 
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+@media screen and (max-width: 600px) {
+  .columna {
+      width: 100%;
+  }
+
+  .iresponsive {
+      width: 100%;
+  }
+}
