@@ -1,10 +1,15 @@
-/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
-/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
-/* Así definimos el comportamiento de caja para todos los elementos */
+
 * {
     box-sizing: border-box;
   }
   
+body {
+    background-image: url('https://wallpapers.com/images/featured-small/monsters-inc-aa6xascr11wdiocy.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
 float: left;
