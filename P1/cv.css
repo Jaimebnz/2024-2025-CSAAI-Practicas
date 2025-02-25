@@ -1,50 +1,38 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
-/* Estilos para las columnas */
+/* Contenedor principal */
+.fila {
+  display: flex; /* Usamos flexbox para alinear las columnas */
+  flex-wrap: wrap; /* Permite que las columnas se apilen en pantallas pequeñas */
+  gap: 20px; /* Espacio entre las columnas */
+}
+
+/* Columnas */
 .columna {
-  float: left;
-  padding: 10px;
-  min-height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .izquierda {
-  width: 25%;
+  flex: 1; /* Ocupa 1 parte del espacio disponible */
+  max-width: 25%; /* Ancho máximo del 25% */
 }
 
 .derecha {
-  width: 75%;
-}
-
-/* Clear floats */
-.fila:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#c1 {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-  border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-#c2 {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-  border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  flex: 3; /* Ocupa 3 partes del espacio disponible */
+  max-width: 75%; /* Ancho máximo del 75% */
 }
 
 /* Estilos para imágenes */
@@ -62,11 +50,8 @@ img {
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
-  .columna {
-      width: 100%;
-  }
-
-  .iresponsive {
-      width: 100%;
+  .izquierda, .derecha {
+      max-width: 100%; /* En pantallas pequeñas, las columnas ocupan el 100% */
+      flex: 1 1 100%; /* Flexbox para apilar las columnas */
   }
 }
