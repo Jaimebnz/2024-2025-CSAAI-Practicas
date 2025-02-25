@@ -1,67 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículum de Mike Wazowski</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CV Dos columnas</title>
+
+   <!-- Hoja de estilo -->
+   <link rel="stylesheet" href="cv.css">    
+
 </head>
 <body>
-    <div class="contenedor">
-        <header>
-            <h1>MIKE WAZOWSKI</h1>
-        </header>
-        <div class="cuerpo">
-            <aside class="lateral">
-                <img src="mike.png" alt="Mike Wazowski" class="foto">
-                <h2>Sobre mí</h2>
-                <p>Monstruo profesional en sustos, estudiante destacado en Monsters University y trabajador en Monsters Inc.</p>
-                <h2>Contacto</h2>
-                <ul>
-                    <li>📅 25 de octubre</li>
-                    <li>📍 Monstruópolis</li>
-                    <li>✉️ mike@monstersinc.com</li>
-                </ul>
-                <h2>Citas célebres</h2>
-                <ul>
-                    <li>"Siempre damos lo mejor de nosotros, Sullivan."</li>
-                    <li>"¡Soy imparable!"</li>
-                </ul>
-            </aside>
-            <main>
-                <section>
-                    <h2>Estudios</h2>
-                    <ul>
-                        <li>Monsters University - Sustología</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Experiencia profesional</h2>
-                    <ul>
-                        <li>Asistente de Sustos - Monsters Inc.</li>
-                        <li>Entrenador de Sustos - Monsters University</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Idiomas</h2>
-                    <ul>
-                        <li>Monstruoso - Nativo</li>
-                        <li>Humano - Básico</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Otros datos de interés</h2>
-                    <ul>
-                        <li>Experto en puertas de acceso</li>
-                        <li>Campeón de carreras en pasillos</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Referencias</h2>
-                    <p>James P. Sullivan - CEO de Monsters Inc.</p>
-                </section>
-            </main>
+    
+    <h2>Diseño de plantilla a dos columnas</h2>
+
+    <div class="fila">
+      <div id="c1" class="columna izquierda">
+        <h2>Columna Izquierda</h2>
+
+        <div class="iresponsive">
+            <img id="imghtml" src="html5.png" alt="html5" width="200" height="200">
         </div>
+
+        <div class="iresponsive">
+            <img id="imgcss" src="css.png" alt="css" width="200" height="200">
+        </div>
+
+        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
+            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
+            eirmod tritani debitis nec ea. Cu vis quis gubergren.
+        </p>
+        <ul>
+            <li>Contacto</li>
+            <li>Formación</li>
+            <li>Experiencia</li>
+            <li>Acerca de</li>
+        </ul>
+      </div>
+      <div id="c2" class="columna derecha">
+        <h2>Columna Derecha</h2>
+        <img src="web-tech.png" alt="Tecnologías web">
+        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
+            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
+            eirmod tritani debitis nec ea. Cu vis quis gubergren.
+        </p>
+      </div>
     </div>
+
 </body>
 </html>
