@@ -12,34 +12,34 @@ body {
 
 /* Contenedor principal */
 .fila {
-  display: flex; /* Usamos flexbox para alinear las columnas */
-  flex-wrap: wrap; /* Permite que las columnas se apilen en pantallas pequeñas */
-  gap: 20px; /* Espacio entre las columnas */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 /* Columnas */
 .columna {
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .izquierda {
-  flex: 1; /* Ocupa 1 parte del espacio disponible */
-  max-width: 25%; /* Ancho máximo del 25% */
+  flex: 1;
+  max-width: 25%;
 }
 
 .derecha {
-  flex: 3; /* Ocupa 3 partes del espacio disponible */
-  max-width: 75%; /* Ancho máximo del 75% */
+  flex: 3;
+  max-width: 75%;
 }
 
 /* Estilos para imágenes */
 img {
   width: 100%;
   height: auto;
-  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  border-radius: 10px;
 }
 
 .iresponsive {
@@ -51,7 +51,17 @@ img {
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .izquierda, .derecha {
-      max-width: 100%; /* En pantallas pequeñas, las columnas ocupan el 100% */
-      flex: 1 1 100%; /* Flexbox para apilar las columnas */
+      max-width: 100%;
+      flex: 1 1 100%;
   }
+}
+
+/* Estilos para enlaces */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
