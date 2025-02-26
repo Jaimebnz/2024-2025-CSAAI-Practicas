@@ -103,24 +103,12 @@ img {
       flex: 1 1 100%;
   }
 }
-/* Estilos para el texto sobre el video */
-.video-text {
-  text-align: center; 
-  font-size: 1.5rem;
-  color: #333; 
-  margin-top: 20px; 
-  margin-bottom: 10px; 
-  font-style: italic; 
-  background: linear-gradient(135deg, #ff6f61, #ffcc00); 
-  background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
-}
 
 /* Estilos para el contenedor del video y el texto */
 .video-container {
   margin: 20px auto; 
   max-width: 800px; 
+  width: 100%; 
   text-align: left; 
 }
 
@@ -131,6 +119,31 @@ img {
   border: none; 
   border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  width: 100%; 
+  height: 315px; 
+}
+
+/* Estilos para el texto sobre el video */
+.video-text {
+  font-size: 1.5rem; 
+  color: #333; 
+  margin-bottom: 10px; 
+  font-style: italic; 
+  background: linear-gradient(135deg, #ff6f61, #ffcc00); 
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+}
+
+/* Diseño responsive para móviles */
+@media screen and (max-width: 600px) {
+  .video-container iframe {
+      height: 200px; 
+  }
+
+  .video-text {
+      font-size: 1.2rem; 
+  }
 }
 
 /* Estilos para los enlaces */
