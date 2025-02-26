@@ -103,13 +103,59 @@ img {
       flex: 1 1 100%;
   }
 }
-
-/* Estilos para enlaces */
-a {
-  color: #0077cc;
-  text-decoration: none;
+/* Estilos para el texto sobre el video */
+.video-text {
+  text-align: center; 
+  font-size: 1.5rem;
+  color: #333; 
+  margin-top: 20px; 
+  margin-bottom: 10px; 
+  font-style: italic; 
+  background: linear-gradient(135deg, #ff6f61, #ffcc00); 
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
 }
 
+/* Estilos para el contenedor del video y el texto */
+.video-container {
+  margin: 20px auto; 
+  max-width: 800px; 
+  text-align: left; 
+}
+
+/* Estilos para el iframe del video */
+.video-container iframe {
+  display: block; 
+  margin: 0 auto; 
+  border: none; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilos para los enlaces */
+a {
+  display: inline-block; 
+  color: #0077cc; 
+  text-decoration: none; 
+  font-size: 1.1rem; 
+  font-weight: bold; 
+  padding: 10px 20px; 
+  border: 2px solid #0077cc; 
+  border-radius: 25px; 
+  transition: all 0.3s ease; 
+}
+
+/* Efecto al pasar el ratón sobre el enlace */
 a:hover {
-  text-decoration: underline;
+  background-color: #0077cc; 
+  color: white; 
+  border-color: #005faa; 
+  transform: scale(1.05); 
+}
+
+/* Estilos específicos para el enlace en about.html */
+.about-link {
+  margin-top: 20px; 
+  text-align: center; 
 }
