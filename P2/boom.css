@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#clave-secreta {
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+#clave-secreta .numero {
+    margin: 0 10px;
+}
+
+#intentos {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#display {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+#botones-digitos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#botones-digitos .digito {
+    font-size: 1.5em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#botones-digitos .digito:hover {
+    background-color: #0056b3;
+}
+
+#botones-control {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#botones-control button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+#botones-control button:hover {
+    background-color: #218838;
+}
+
+#botones-control #stop {
+    background-color: #dc3545;
+}
+
+#botones-control #stop:hover {
+    background-color: #c82333;
+}
+
+#botones-control #reset {
+    background-color: #ffc107;
+    color: black;
+}
+
+#botones-control #reset:hover {
+    background-color: #e0a800;
+}
