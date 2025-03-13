@@ -39,7 +39,6 @@ function reiniciarJuego() {
     juegoIniciado = false;
 }
 
-//-- Comprobar si el dígito está en la clave secreta
 function comprobarDigito(digito) {
     if (!juegoIniciado) {
         crono.start();
@@ -63,9 +62,11 @@ function comprobarDigito(digito) {
 
         //-- Comprobar si se ha ganado
         if ([...gui.claveSecreta].every(num => num.textContent !== "*")) {
-            crono.stop();
-            alert("¡Has ganado!");
-            reiniciarJuego();
+            setTimeout(() => {
+                crono.stop();
+                alert("¡Has ganado! La clave era: " + claveSecreta.join(""));
+                reiniciarJuego();
+            }, 100); 
         }
 
         //-- Comprobar si se han agotado los intentos
