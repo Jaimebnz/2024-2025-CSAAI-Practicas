@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -14,15 +15,20 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px; 
 }
 
 #clave-secreta {
     margin: 20px 0;
     font-size: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 #clave-secreta .numero {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 #intentos {
@@ -91,4 +97,56 @@ body {
 
 #botones-control #reset:hover {
     background-color: #e0a800;
+}
+
+@media (max-width: 600px) {
+    #game {
+        padding: 15px;
+    }
+
+    #clave-secreta {
+        font-size: 1.5em;
+    }
+
+    #intentos {
+        font-size: 1em;
+    }
+
+    #display {
+        font-size: 1.2em;
+    }
+
+    #botones-digitos .digito {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    #botones-control button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    #clave-secreta {
+        font-size: 1.2em;
+    }
+
+    #botones-digitos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #botones-digitos .digito {
+        font-size: 1em;
+        padding: 6px;
+    }
+
+    #botones-control {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #botones-control button {
+        width: 100%;
+    }
 }
