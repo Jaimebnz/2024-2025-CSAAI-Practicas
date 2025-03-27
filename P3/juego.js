@@ -183,14 +183,14 @@ function dibujarPuntuacion() {
     ctx.font = '24px Arial';
     ctx.textAlign = 'left';
     ctx.fillText(`Puntos: ${puntuacion}`, 20, 30);
-    ctx.fillText(`Oleada: ${oleadaActual}`, 20, 60);
+    ctx.fillText(`Round: ${oleadaActual}`, 20, 60);
     
     if (esperandoOleada) {
         ctx.textAlign = 'center';
         ctx.fillStyle = '#2ecc71';
         ctx.font = '36px Arial';
         ctx.fillText(
-            `Preparando oleada ${oleadaActual}...`,
+            `Preparando round ${oleadaActual}...`,
             ANCHO / 2,
             ALTO / 2
         );
