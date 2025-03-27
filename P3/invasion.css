@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+#InvasionAlienigena {
+    border: 2px solid #2ecc71;
+    max-width: 100%;
+    max-height: 100vh;
+    box-shadow: 0 0 20px #2ecc71;
+}
+
+#puntuacion {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+    text-shadow: 0 0 5px #2ecc71;
+}
