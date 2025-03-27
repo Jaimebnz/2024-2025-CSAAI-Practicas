@@ -40,7 +40,7 @@ let temporizadorOleada = 0;
 // Elementos de sonido
 const sonidoDisparo = document.getElementById('disparo');
 const sonidoExplosion = document.getElementById('explosion');
-const sonidoOleada = document.getElementById('oleada');
+const sonidoRound = document.getElementById('round'); 
 const sonidoVictoria = document.getElementById('victoria');
 const sonidoDerrota = document.getElementById('derrota');
 
@@ -317,8 +317,8 @@ function verificarCondicionVictoria() {
         aumentoVelocidadAliens += 0.2;
         oleadaActual++;
         
-        sonidoOleada.currentTime = 0;
-        sonidoOleada.play().catch(e => console.log("Error en oleada:", e));
+        sonidoRound.currentTime = 0; 
+        sonidoRound.play().catch(e => console.log("Error en sonido de round:", e));
     }
 }
 
@@ -334,7 +334,7 @@ function mostrarFinJuego() {
     
     ctx.font = '24px Arial';
     ctx.fillText(
-        `Oleada alcanzada: ${oleadaActual}`,
+        `Round: ${oleadaActual}`,
         ANCHO / 2,
         ALTO / 2
     );
