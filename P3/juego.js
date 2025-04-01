@@ -1,8 +1,8 @@
 // Constantes del juego
 const ANCHO = 800;
 const ALTO = 600;
-const ANCHO_NAVE = 50;
-const ALTO_NAVE = 30;
+const ANCHO_NAVE = 70;
+const ALTO_NAVE = 40;
 const FILAS_ALIENS = 3;
 const ALIENS_POR_FILA = 8;
 const ANCHO_ALIEN = 40;
@@ -13,6 +13,16 @@ const DURACION_EXPLOSION = 15;
 const AUMENTO_ALIENS_OLEADA = 2;
 const VELOCIDAD_BASE_ALIENS = 1;
 const RETRASO_OLEADA = 2000;
+const ANCHO_BALA = 3;  
+const ALTO_BALA = 10;  
+const NUM_BALAS = 3;   
+const DISPERSION_BALAS = 15;
+const OLEADAS_TOTALES = 3;
+const imgNave = new Image();
+imgNave.src = 'halcon.png'; 
+
+const imgAlien = new Image();
+imgAlien.src = 'estrella.png';
 
 // Variables del juego
 let canvas, ctx;
@@ -55,8 +65,31 @@ function iniciarJuego() {
     document.addEventListener('keydown', manejarTeclaPresionada);
     document.addEventListener('keyup', manejarTeclaSoltada);
     requestAnimationFrame(bucleJuego);
+    
+    if ('ontouchstart' in window) {
+        const btnIzquierda = document.getElementById('btnIzquierda');
+        const btnDerecha = document.getElementById('btnDerecha');
+        const btnDisparar = document.getElementById('btnDisparar');
+        
+        // Eventos para mantener presionado
+        btnIzquierda.addEventListener('touchstart', () => nave.direccionX = -1);
+        btnIzquierda.addEventListener('touchend', () => nave.direccionX = 0);
+        
+        btnDerecha.addEventListener('touchstart', () => nave.direccionX = 1);
+        btnDerecha.addEventListener('touchend', () => nave.direccionX = 0);
+        
+        btnDisparar.addEventListener('touchstart', crearBala);
+        
+        // También funciona con clicks (para tablets)
+        btnIzquierda.addEventListener('mousedown', () => nave.direccionX = -1);
+        btnIzquierda.addEventListener('mouseup', () => nave.direccionX = 0);
+        
+        btnDerecha.addEventListener('mousedown', () => nave.direccionX = 1);
+        btnDerecha.addEventListener('mouseup', () => nave.direccionX = 0);
+        
+        btnDisparar.addEventListener('mousedown', crearBala);
+    }
 }
-
 // Crear oleada de aliens
 function crearAliens() {
     const aliensEnOleada = ALIENS_POR_FILA + (oleadaActual - 1) * AUMENTO_ALIENS_OLEADA;
@@ -142,23 +175,59 @@ function dibujarEstrellas() {
 }
 
 function dibujarNave() {
-    ctx.fillStyle = '#2ecc71';
-    ctx.fillRect(nave.x, nave.y, nave.ancho, nave.alto);
+    ctx.drawImage(imgNave, nave.x, nave.y, nave.ancho, nave.alto);
 }
 
 function dibujarAliens() {
     aliens.forEach(alien => {
         if (alien.estaVivo) {
-            ctx.fillStyle = '#e74c3c';
-            ctx.fillRect(alien.x, alien.y, alien.ancho, alien.alto);
+            ctx.drawImage(imgAlien, alien.x, alien.y, alien.ancho, alien.alto);
         }
     });
 }
 
+function moverBalas() {
+    for (let i = balas.length - 1; i >= 0; i--) {
+        const bala = balas[i];
+        // Mover con ángulo (si tiene)
+        if (bala.angulo !== undefined) {
+            bala.x += Math.sin(bala.angulo) * 2; // Pequeña desviación horizontal
+            bala.y -= Math.cos(bala.angulo) * bala.velocidad;
+        } else {
+            // Movimiento recto (backward compatibility)
+            bala.y -= bala.velocidad;
+        }
+        
+        if (bala.y + bala.alto < 0) {
+            balas.splice(i, 1);
+        }
+    }
+}
+
 function dibujarBalas() {
-    ctx.fillStyle = '#f1c40f';
+    ctx.fillStyle = '#FFFF00';
     balas.forEach(bala => {
-        ctx.fillRect(bala.x, bala.y, bala.ancho, bala.alto);
+        ctx.beginPath();
+        ctx.ellipse(
+            bala.x + bala.ancho/2,
+            bala.y + bala.alto/2,
+            bala.ancho/2,
+            bala.alto/2,
+            0, 0, Math.PI * 2
+        );
+        ctx.fill();
+        
+        ctx.fillStyle = 'rgba(255, 255, 0, 0.5)';
+        ctx.beginPath();
+        ctx.ellipse(
+            bala.x + bala.ancho/2,
+            bala.y + bala.alto + 3,
+            bala.ancho/3,
+            bala.alto/3,
+            0, 0, Math.PI * 2
+        );
+        ctx.fill();
+        ctx.fillStyle = '#FFFF00';
     });
 }
 
@@ -179,8 +248,8 @@ function dibujarExplosiones() {
 }
 
 function dibujarPuntuacion() {
-    ctx.fillStyle = '#FFF';
-    ctx.font = '24px Arial';
+    ctx.font = '20px Futurista';
+    ctx.fillStyle = '#2ecc71';
     ctx.textAlign = 'left';
     ctx.fillText(`Puntos: ${puntuacion}`, 20, 30);
     ctx.fillText(`Round: ${oleadaActual}`, 20, 60);
@@ -190,7 +259,7 @@ function dibujarPuntuacion() {
         ctx.fillStyle = '#2ecc71';
         ctx.font = '36px Arial';
         ctx.fillText(
-            `Preparando round ${oleadaActual}...`,
+            `Round ${oleadaActual}`,
             ANCHO / 2,
             ALTO / 2
         );
@@ -243,28 +312,29 @@ function ajustarVelocidadAliens() {
 // Sistema de disparos
 function crearBala() {
     if (puedeDisparar) {
-        balas.push({
-            x: nave.x + nave.ancho / 2 - 2.5,
-            y: nave.y,
-            ancho: 5,
-            alto: 15,
-            velocidad: VELOCIDAD_BALA
-        });
+        const centroX = nave.x + nave.ancho / 2;
+        
+        for (let i = 0; i < NUM_BALAS; i++) {
+            const angulo = (i - Math.floor(NUM_BALAS/2)) * DISPERSION_BALAS;
+            const anguloRad = angulo * (Math.PI/180);
+            
+            const offsetX = Math.sin(anguloRad) * 10;
+            
+            balas.push({
+                x: centroX - ANCHO_BALA/2 + offsetX,
+                y: nave.y,
+                ancho: ANCHO_BALA,
+                alto: ALTO_BALA,
+                velocidad: VELOCIDAD_BALA,
+                angulo: anguloRad
+            });
+        }
         
         puedeDisparar = false;
         setTimeout(() => puedeDisparar = true, RETRASO_DISPARO);
         
         sonidoDisparo.currentTime = 0;
         sonidoDisparo.play().catch(e => console.log("Error al disparar:", e));
-    }
-}
-
-function moverBalas() {
-    for (let i = balas.length - 1; i >= 0; i--) {
-        balas[i].y -= balas[i].velocidad;
-        if (balas[i].y + balas[i].alto < 0) {
-            balas.splice(i, 1);
-        }
     }
 }
 
@@ -312,13 +382,21 @@ function verificarCondicionVictoria() {
     const aliensVivos = aliens.filter(alien => alien.estaVivo).length;
     
     if (aliensVivos === 0 && !esperandoOleada) {
+        // Si es la última ronda, victoria inmediata
+        if (oleadaActual >= OLEADAS_TOTALES) {
+            juegoTerminado = true;
+            juegoGanado = true;
+            sonidoVictoria.currentTime = 0;
+            sonidoVictoria.play();
+            return; 
+        }
+        
         esperandoOleada = true;
         temporizadorOleada = Date.now();
         aumentoVelocidadAliens += 0.2;
         oleadaActual++;
-        
-        sonidoRound.currentTime = 0; 
-        sonidoRound.play().catch(e => console.log("Error en sonido de round:", e));
+        sonidoRound.currentTime = 0;
+        sonidoRound.play();
     }
 }
 

@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'Futurista';
+    src: url('fonts/futurista.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#tituloJuego {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 15px #00ffcc, 0 0 30px #007766;
+    text-align: center;
+}
+
+
 body {
     margin: 0;
     overflow: hidden;
@@ -14,13 +36,63 @@ body {
     max-width: 100%;
     max-height: 100vh;
     box-shadow: 0 0 20px #2ecc71;
+    position: relative;
 }
 
+
 #puntuacion {
+    font-family: 'Arial', sans-serif;
     position: absolute;
     top: 10px;
     left: 10px;
+    font-size: 22px;
+    font-family: 'Futurista', sans-serif;
+    color: #2ecc71;
+    text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71;
+}
+
+#controlesMoviles {
+    display: none; 
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    z-index: 100;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(46, 204, 113, 0.3);
+    border: 2px solid #2ecc71;
     color: white;
-    font-size: 24px;
-    text-shadow: 0 0 5px #2ecc71;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+#btnDisparar {
+    background-color: rgba(231, 76, 60, 0.5);
+    border-color: #e74c3c;
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+}
+
+@media (max-width: 768px) {
+    #controlesMoviles {
+        display: flex;
+    }
+    
+    #InvasionAlienigena {
+        margin-bottom: 100px; 
+    }
 }
