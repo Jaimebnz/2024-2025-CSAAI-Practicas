@@ -126,6 +126,7 @@ function actualizar() {
     if (esperandoOleada) {
         if (Date.now() - temporizadorOleada > RETRASO_OLEADA) {
             esperandoOleada = false;
+            balas = [];
             crearAliens();
         }
         return;

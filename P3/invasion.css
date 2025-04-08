@@ -1,10 +1,3 @@
-@font-face {
-    font-family: 'Futurista';
-    src: url('fonts/futurista.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 #tituloJuego {
     position: absolute;
     top: 10px;
@@ -17,10 +10,12 @@
     color: #00ffcc;
     text-shadow: 0 0 5px #00ffcc, 0 0 15px #00ffcc, 0 0 30px #007766;
     text-align: center;
+    z-index: 1000;
 }
 
 
 body {
+    position: relative;
     margin: 0;
     overflow: hidden;
     background-color: #000;
