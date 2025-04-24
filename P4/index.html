@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory</title>
+  <link rel="stylesheet" href="memory.css" />
+  <script src="memory-game.js" defer></script>
+</head>
+<body>
+  <div class="game">
+    <div class="controles">
+      <select id="dimension-select">
+        <option value="2">2x2</option>
+        <option value="4" selected>4x4</option>
+        <option value="6">6x6</option>
+      </select>
+      <button id="comenzar-btn">Comenzar</button>
+      <button id="reiniciar-btn" class="disabled">Reiniciar</button>
+      <div class="display">
+        <div class="movimientos">0 movimientos</div>
+        <div class="timer">tiempo: 0 sec</div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="tablero" grid-dimension="4"></div>
+      <div class="win">¡Has Ganado!</div>
+    </div>
+  </div>
+</body>
+</html>
