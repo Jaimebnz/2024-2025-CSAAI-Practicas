@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Aleatoria</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="net-dijkstra.js"></script>
+    <script src="red.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Red Aleatoria</h1>
+        
+        <div class="controls">
+            <button id="generateBtn">Generar Red</button>
+            <button id="calculateBtn">Calcular Ruta</button>
+        </div>
+        
+        <div class="info-display">
+            <p id="nodeCount">Número de nodos: 0</p>
+            <p id="totalTime">Tiempo total: 0 sec</p>
+            <p id="message">Presiona "Generar Red" para comenzar.</p>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="networkCanvas" width="500" height="300"></canvas>
+        </div>
+    </div>
+</body>
+</html>
